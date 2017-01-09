@@ -68,5 +68,12 @@ public class Player : MonoBehaviour {
 
 		// Move the player object
 		transform.Translate( new Vector3(Time.deltaTime * speed * movementInput,0,0), Space.World);	
+
+		if(Input.GetButton("Jump")) {
+         	// Get player's attack component
+         	// and execute its Shoot() method
+         	Attack attack = GetComponent<Attack>();
+         	attack.Shoot();
+      	}
 	}
 }
