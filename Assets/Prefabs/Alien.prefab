@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 50033818806828602}
   - component: {fileID: 58788982564297490}
   - component: {fileID: 114346410457034886}
+  - component: {fileID: 114271135686743042}
   m_Layer: 0
   m_Name: Alien
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +78,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.28
+--- !u!114 &114271135686743042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1322019342048806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00899741f51046cb8c0345588fafeee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPrefab: {fileID: 4864177266937620, guid: bf98996d3ea9144c197543f472d93f53, type: 2}
+  autoShootProbability: 0.001
+  fireCooldownTime: 1
 --- !u!114 &114346410457034886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704241d41a5284141aa5e913945c40eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 100
 --- !u!212 &212367979580336004
 SpriteRenderer:
   m_ObjectHideFlags: 1
