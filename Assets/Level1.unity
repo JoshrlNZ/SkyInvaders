@@ -389,6 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alienPrefab: {fileID: 4621054008610818, guid: deada4bfb673f4eabacc0c76d91e77d5,
     type: 2}
+  speed: 2
 --- !u!1 &1944791759
 GameObject:
   m_ObjectHideFlags: 0
