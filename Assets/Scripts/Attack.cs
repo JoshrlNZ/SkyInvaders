@@ -20,7 +20,7 @@ public class Attack : MonoBehaviour {
    public AudioClip shotSound = null;
       
    // Per every frame...
-   void Update () {
+   void FixedUpdate () {
       // If still some time left until can fire again
       // reduce the time by the time since last
       // frame 
@@ -44,7 +44,7 @@ public class Attack : MonoBehaviour {
    public void Shoot() {
       // Shoot only if the fire cooldown period
       // has expired
-      if(fireCooldownTimeLeft <= 0) {
+      if(fireCooldownTimeLeft <= 0 && Time.timeScale == 1) {
          // Create a projectile object from 
          // the shot prefab
          Transform shot = Instantiate(shotPrefab);
