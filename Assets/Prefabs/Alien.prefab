@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4621054008610818}
   - component: {fileID: 212367979580336004}
   - component: {fileID: 50033818806828602}
-  - component: {fileID: 58788982564297490}
   - component: {fileID: 114346410457034886}
   - component: {fileID: 114271135686743042}
+  - component: {fileID: 60864805310319182}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Enemy
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322019342048806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.604317, y: 0.54683304, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: -4.6, y: -1.039259, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,9 +63,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &58788982564297490
-CircleCollider2D:
+  m_Constraints: 4
+--- !u!60 &60864805310319182
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -76,8 +76,11 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.28
+  m_Points:
+    m_Paths:
+    - - {x: -0.53, y: 0.6}
+      - {x: 0.56, y: 0.6}
+      - {x: 0.015, y: -0.33}
 --- !u!114 &114271135686743042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,6 +95,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 4864177266937620, guid: bf98996d3ea9144c197543f472d93f53, type: 2}
   autoShootProbability: 0.001
   fireCooldownTime: 1
+  shotSound: {fileID: 0}
 --- !u!114 &114346410457034886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,7 +139,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 925b58a12c60e403e91d2634b260994b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59755eface6dc6048841ba0d2c4a5590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

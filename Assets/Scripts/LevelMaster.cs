@@ -49,14 +49,14 @@ public class LevelMaster : MonoBehaviour {
       // Show player score in white on the top left of the screen
       GUI.color = Color.white;   
       GUI.skin.label.alignment = TextAnchor.UpperLeft;
-      GUI.skin.label.fontSize = 40;
+      GUI.skin.label.fontSize = 24;
       GUI.skin.label.fontStyle = FontStyle.Bold;
-      GUI.Label(new Rect(20,20,500,100), "Score: " + GameMaster.playerScore);
+      GUI.Label(new Rect(5,0,500,100), "Score: " + GameMaster.playerScore);
       
       // Show the player lives in red on the top right of the screen
       GUI.color = Color.red;
       GUI.skin.label.alignment = TextAnchor.UpperRight;
-      GUI.skin.label.fontSize = 40;
+      GUI.skin.label.fontSize = 24;
       GUI.skin.label.fontStyle = FontStyle.Bold;
       GUI.Label(new Rect(Screen.width - 320,20,300,100), "Lives: " + GameMaster.playerHealth);
    }

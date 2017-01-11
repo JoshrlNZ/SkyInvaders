@@ -104,6 +104,7 @@ public class Player : MonoBehaviour {
 
 		// Move the player object
 		transform.Translate( new Vector3(Time.deltaTime * speed * movementInput,0,0), Space.World);	
+        // Rotate the player object
         Quaternion target = Quaternion.Euler(0, 0, -tiltAngle * movementInput);
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * tiltAngle);
 
