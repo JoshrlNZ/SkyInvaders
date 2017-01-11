@@ -23,7 +23,7 @@ public class EnemyWave : MonoBehaviour {
             Transform alien = Instantiate(alienPrefab);
             alien.parent = transform;
             // Position the newly created object in the wave
-            alien.position = new Vector3((x*gapBetweenAliens)+ offsetX, 0 + (y * gapBetweenAliens),0);         
+            alien.position = new Vector3((x*gapBetweenAliens)+ offsetX, 0 + (y * gapBetweenAliens),transform.position.x-2);         
          }
       }
    }

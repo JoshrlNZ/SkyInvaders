@@ -20,6 +20,8 @@ public class Player : MonoBehaviour {
    // right edge of the screen
    bool atRightWall = false;
 
+   public float tiltAngle;
+
    // On collision with a trigger collider...
    void OnTriggerEnter2D(Collider2D other) {
       // Check the tag of the object the player
@@ -102,6 +104,8 @@ public class Player : MonoBehaviour {
 
 		// Move the player object
 		transform.Translate( new Vector3(Time.deltaTime * speed * movementInput,0,0), Space.World);	
+        Quaternion target = Quaternion.Euler(0, 0, -tiltAngle * movementInput);
+        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * tiltAngle);
 
 		if(Input.GetButton("Jump")) {
          	// Get player's attack component
