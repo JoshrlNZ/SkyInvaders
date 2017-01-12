@@ -16,7 +16,7 @@ public class EnemyWave : MonoBehaviour {
           Transform alien = Instantiate(alienPrefab);
           alien.parent = transform;
           randomSample = Random.Range(-1f, 1f);
-          alien.position = new Vector3(randomSample*5,6,0);
+          alien.position = new Vector3(randomSample*5,5.5f,-2);
       }
    }
 }

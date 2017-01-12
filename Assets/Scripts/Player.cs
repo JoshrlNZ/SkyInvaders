@@ -112,7 +112,7 @@ public class Player : MonoBehaviour {
          	// Get player's attack component
          	// and execute its Shoot() method
          	Attack attack = GetComponent<Attack>();
-         	attack.Shoot();
+         	attack.Shoot(true);
       	}
 	}
 }

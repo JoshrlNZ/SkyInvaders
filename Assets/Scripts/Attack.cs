@@ -35,13 +35,13 @@ public class Attack : MonoBehaviour {
          // If that random number is less than the 
          // probability of shooting, then try to shoot
          if(randomSample < autoShootProbability) {
-            Shoot();   
+            Shoot(false);   
          }
       }
    }
 
    // Method for firing a projectile
-   public void Shoot() {
+   public void Shoot(bool playerShot) {
       // Shoot only if the fire cooldown period
       // has expired
       if(fireCooldownTimeLeft <= 0 && Time.timeScale == 1) {
@@ -50,7 +50,11 @@ public class Attack : MonoBehaviour {
          Transform shot = Instantiate(shotPrefab);
          // Set the position of the projectile object
          // to the position of the firing game object
-         shot.position = transform.position;
+         if (playerShot) {
+             shot.position = new Vector3 (transform.position.x,transform.position.y+0.8f,-5);
+         } else {
+             shot.position = transform.position;
+         }
          // Set time left until next shot
          // to the cooldown time
          fireCooldownTimeLeft = fireCooldownTime;  

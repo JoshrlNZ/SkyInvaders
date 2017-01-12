@@ -6,6 +6,8 @@ public class LevelMaster : MonoBehaviour {
    public EdgeCollider2D leftWall;
    public EdgeCollider2D rightWall;
 
+   public Texture boxTexture;
+
    // Use this for initialization
    void Start () {
       // Get the width and height of the camera (in pixels)
@@ -46,6 +48,9 @@ public class LevelMaster : MonoBehaviour {
 
       // HUD
    void OnGUI() {
+      // Show black bar at the top of the screen
+      GUI.Box(new Rect(0, 0, Screen.width, 35), boxTexture);
+
       // Show player score in white on the top left of the screen
       GUI.color = Color.white;   
       GUI.skin.label.alignment = TextAnchor.UpperLeft;
@@ -58,6 +63,8 @@ public class LevelMaster : MonoBehaviour {
       GUI.skin.label.alignment = TextAnchor.UpperRight;
       GUI.skin.label.fontSize = 24;
       GUI.skin.label.fontStyle = FontStyle.Bold;
-      GUI.Label(new Rect(Screen.width - 320,20,300,100), "Lives: " + GameMaster.playerHealth);
+      GUI.Label(new Rect(Screen.width - 320,0,300,100), "Lives: " + GameMaster.playerHealth);
+
+
    }
 }
