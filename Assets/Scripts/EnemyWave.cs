@@ -14,7 +14,7 @@ public class EnemyWave : MonoBehaviour {
 	// Update is called once per frame
    void FixedUpdate () {
       float randomSample = Random.Range(0f, 1f);
-      if (randomSample < (autoSpawnProbability + (GameMaster.waveNumber * 0.002))) {
+      if (randomSample < (autoSpawnProbability + (GameMaster.waveNumber * 0.005))) {
           Transform alien = Instantiate(alienPrefab);
           alien.parent = transform;
           randomSample = Random.Range(-1f, 1f);
