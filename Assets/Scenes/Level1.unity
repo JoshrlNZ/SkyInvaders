@@ -154,6 +154,7 @@ MonoBehaviour:
   leftWall: {fileID: 1755719434}
   rightWall: {fileID: 2066928230}
   boxTexture: {fileID: 2800000, guid: f4af945a50315a143abaa599791926ec, type: 3}
+  barFont: {fileID: 12800000, guid: d128d841b0bb1894ea9ae3aa92d928bd, type: 3}
 --- !u!4 &479937469
 Transform:
   m_ObjectHideFlags: 0
@@ -447,7 +448,7 @@ Transform:
   m_GameObject: {fileID: 1483405314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2000, y: 550, z: 1}
+  m_LocalScale: {x: 3000, y: 550, z: 1}
   m_Children: []
   m_Father: {fileID: 206128185}
   m_RootOrder: 0

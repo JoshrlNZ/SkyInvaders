@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour {
          // score
          GameMaster.playerHealth = 3;
          GameMaster.playerScore = 0;
+         GameMaster.waveNumber = 1;
+         GameMaster.enemiesLeft = 20;
          // Load the first level
          SceneManager.LoadScene("Level1");            
       }

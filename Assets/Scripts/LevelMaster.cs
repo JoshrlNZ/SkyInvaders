@@ -7,6 +7,7 @@ public class LevelMaster : MonoBehaviour {
    public EdgeCollider2D rightWall;
 
    public Texture boxTexture;
+   public Font barFont;
 
    // Use this for initialization
    void Start () {
@@ -51,20 +52,23 @@ public class LevelMaster : MonoBehaviour {
       // Show black bar at the top of the screen
       GUI.Box(new Rect(0, 0, Screen.width, 35), boxTexture);
 
+      GUIStyle barText = new GUIStyle();
+      barText.font = barFont;  
+      barText.fontSize = 24;
+      barText.normal.textColor = Color.white;
+
       // Show player score in white on the top left of the screen
-      GUI.color = Color.white;   
-      GUI.skin.label.alignment = TextAnchor.UpperLeft;
-      GUI.skin.label.fontSize = 24;
-      GUI.skin.label.fontStyle = FontStyle.Bold;
-      GUI.Label(new Rect(5,0,500,100), "Score: " + GameMaster.playerScore);
+      barText.alignment = TextAnchor.UpperLeft;
+      GUI.Label(new Rect(15,3,500,100), "Score: " + GameMaster.playerScore, barText);
       
       // Show the player lives in red on the top right of the screen
-      GUI.color = Color.red;
-      GUI.skin.label.alignment = TextAnchor.UpperRight;
+      barText.alignment = TextAnchor.UpperRight;
+      GUI.Label(new Rect(Screen.width - 315,3,300,100), "Lives: " + GameMaster.playerHealth, barText);
+
+      // Show current wave and enemies remaining
+      GUI.color = Color.white;
+      GUI.skin.label.alignment = TextAnchor.UpperLeft;
       GUI.skin.label.fontSize = 24;
-      GUI.skin.label.fontStyle = FontStyle.Bold;
-      GUI.Label(new Rect(Screen.width - 320,0,300,100), "Lives: " + GameMaster.playerHealth);
-
-
+      GUI.Label(new Rect(Screen.width/2-200, 3, 400, 100), "Wave " + GameMaster.waveNumber + " - " + GameMaster.enemiesLeft + " enemies remaining", barText);
    }
 }
