@@ -34,7 +34,7 @@ public class Attack : MonoBehaviour {
          float randomSample = Random.Range(0f, 1f);
          // If that random number is less than the 
          // probability of shooting, then try to shoot
-         if(randomSample < autoShootProbability) {
+         if(randomSample < (autoShootProbability + (GameMaster.waveNumber * 0.0005))) {
             Shoot(false);   
          }
       }

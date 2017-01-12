@@ -5,7 +5,6 @@ public class LevelMaster : MonoBehaviour {
    // Variables referencing two edge colliders
    public EdgeCollider2D leftWall;
    public EdgeCollider2D rightWall;
-
    public Texture boxTexture;
    public Font barFont;
 

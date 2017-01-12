@@ -737,7 +737,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alienPrefab: {fileID: 4621054008610818, guid: deada4bfb673f4eabacc0c76d91e77d5,
     type: 2}
-  autoSpawnProbability: 0.02
+  alienPrefab2: {fileID: 4669613823626592, guid: d3dd068cb5b7a5047a923740ceec6ec7,
+    type: 2}
+  autoSpawnProbability: 0.01
+  autoSpawnProbability2: 0.0001
 --- !u!1 &1755719432
 GameObject:
   m_ObjectHideFlags: 0

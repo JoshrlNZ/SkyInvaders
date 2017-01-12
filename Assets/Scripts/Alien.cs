@@ -4,9 +4,15 @@ public class Alien : MonoBehaviour {
 
    //Points the alien is worth
    public int points = 100;
+   public bool isUFO = false;
 
    void Update() {
-       transform.Translate(0, -EnemyWave.speed * Time.deltaTime, 0);
+       if (isUFO) {
+           transform.Translate(-EnemyWave.speed * Time.deltaTime * 2, 0, 0);
+       } else {
+           transform.Translate(0, -EnemyWave.speed * Time.deltaTime, 0);
+       }
+       
    }
 
    // When enemy collides with an object with a
