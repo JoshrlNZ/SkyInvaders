@@ -61,6 +61,7 @@ public class PausePanel : MonoBehaviour {
 	  	   GameMaster.playerScore = 0;
    	       GameMaster.waveNumber = 1;
            GameMaster.enemiesLeft = 20;
+           Player.powerTimeLeft = 0;
 		   GameMaster.gameover = false;
 		   SceneManager.LoadScene("Level1");
 	   }

@@ -10,6 +10,7 @@ public class MainMenuManager : MonoBehaviour {
 	  GameMaster.playerScore = 0;
    	  GameMaster.waveNumber = 1;
       GameMaster.enemiesLeft = 20;
+      Player.powerTimeLeft = 0;
       SceneManager.LoadScene("Level1");
    }
    
