@@ -3,7 +3,7 @@
 public class Alien : MonoBehaviour {
 
    //Points the alien is worth
-   public int points = 100;
+   public static int points = 10;
    public bool isUFO = false;
 
    void Update() {
@@ -12,7 +12,9 @@ public class Alien : MonoBehaviour {
        } else {
            transform.Translate(0, -EnemyWave.speed * Time.deltaTime, 0);
        }
-       
+       if(!Utility.isVisible(GetComponent<Renderer>(), Camera.main)) {
+         Destroy(gameObject);
+        }
    }
 
    // When enemy collides with an object with a
@@ -32,7 +34,8 @@ public class Alien : MonoBehaviour {
             Destroy(other.gameObject);
 
             // Report enemy hit to the game master
-            GameMaster.EnemyHit(this);     
+            GameMaster.EnemyHit(this);  
+            points += 5;
 
             // Destroy self
             Destroy(gameObject);         

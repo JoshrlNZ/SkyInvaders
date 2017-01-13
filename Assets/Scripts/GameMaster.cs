@@ -19,7 +19,12 @@ public class GameMaster : MonoBehaviour {
    // Method to call when enemy is hit
    public static void EnemyHit(Alien alien) {
       // Add enemy points to player's score
-      playerScore += alien.points;
+      if (alien.isUFO) {
+          playerScore += (Alien.points * 10);
+      } else {
+          playerScore += Alien.points;
+      }
+      
       enemiesLeft--;
       if (enemiesLeft == 0) {
           waveNumber++;

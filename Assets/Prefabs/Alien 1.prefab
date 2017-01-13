@@ -104,7 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704241d41a5284141aa5e913945c40eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 2000
   isUFO: 1
 --- !u!212 &212645849979692434
 SpriteRenderer:
