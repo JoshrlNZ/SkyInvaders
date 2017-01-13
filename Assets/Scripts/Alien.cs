@@ -6,6 +6,8 @@ public class Alien : MonoBehaviour {
    public static int points = 10;
    public bool isUFO = false;
 
+   public Transform powerup;
+
    void Update() {
        if (isUFO) {
            transform.Translate(-EnemyWave.speed * Time.deltaTime * 2, 0, 0);
@@ -33,9 +35,17 @@ public class Alien : MonoBehaviour {
             // Destroy the projectile game object
             Destroy(other.gameObject);
 
+            float randomSample = Random.Range(0f, 1f);
+            if (randomSample < 0.02f) {
+                Transform newPowerup = Instantiate(powerup);
+            newPowerup.transform.position = transform.position;
+            }
+
             // Report enemy hit to the game master
             GameMaster.EnemyHit(this);  
             points += 5;
+
+            
 
             // Destroy self
             Destroy(gameObject);         

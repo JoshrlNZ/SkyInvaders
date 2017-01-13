@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUFO: 1
+  powerup: {fileID: 0}
 --- !u!212 &212645849979692434
 SpriteRenderer:
   m_ObjectHideFlags: 1

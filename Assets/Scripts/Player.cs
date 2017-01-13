@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
    // Flag indicating whether the player is at the 
    // right edge of the screen
    bool atRightWall = false;
+   public static float powerTimeLeft;
 
    public float tiltAngle;
 
@@ -34,7 +35,10 @@ public class Player : MonoBehaviour {
          // If collided with the right wall, set
          // the right wall flag to true
          atRightWall = true;
-      }  else {
+      } else if (other.tag == "Powerup") {
+         powerTimeLeft = 5f;
+         Destroy(other.gameObject);
+      } else {
          // Collision with something that is not a wall
          // Check if collided with a projectile
          // A projectile has a Projectile script component,
@@ -108,11 +112,15 @@ public class Player : MonoBehaviour {
         Quaternion target = Quaternion.Euler(0, 0, -tiltAngle * movementInput);
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * tiltAngle);
 
+        powerTimeLeft -= Time.deltaTime;
+
 		if(Input.GetButton("Jump")) {
          	// Get player's attack component
          	// and execute its Shoot() method
          	Attack attack = GetComponent<Attack>();
          	attack.Shoot(true);
       	}
+
+        
 	}
 }

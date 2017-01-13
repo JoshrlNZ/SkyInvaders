@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUFO: 0
+  powerup: {fileID: 4078630692618190, guid: 1577df26bf64db94a8b001a8e84c174a, type: 2}
 --- !u!212 &212367979580336004
 SpriteRenderer:
   m_ObjectHideFlags: 1

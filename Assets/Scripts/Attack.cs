@@ -48,10 +48,19 @@ public class Attack : MonoBehaviour {
          // Create a projectile object from 
          // the shot prefab
          Transform shot = Instantiate(shotPrefab);
+         if (playerShot && Player.powerTimeLeft > 0) {
+             Transform shot2 = Instantiate(shotPrefab);
+             shot2.position = new Vector3 (transform.position.x-0.3f,transform.position.y+0.8f,-5);
+         }
          // Set the position of the projectile object
          // to the position of the firing game object
          if (playerShot) {
-             shot.position = new Vector3 (transform.position.x,transform.position.y+0.8f,-5);
+             if (Player.powerTimeLeft > 0) {
+                 shot.position = new Vector3 (transform.position.x+0.3f,transform.position.y+0.8f,-5);
+             } else {
+                 shot.position = new Vector3 (transform.position.x,transform.position.y+0.8f,-5);
+             }
+             
          } else {
              shot.position = transform.position;
          }

@@ -19,7 +19,6 @@ public class EnemyWave : MonoBehaviour {
           alien.parent = transform;
           randomSample = Random.Range(-1f, 1f);
           Vector3 tmpPos = Camera.main.ScreenToWorldPoint(new Vector3(0,Screen.width,0));
-          Debug.Log(tmpPos);
           alien.position = new Vector3(randomSample*tmpPos.x/2,5.5f,-2);
       }
 
