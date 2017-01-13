@@ -11,8 +11,10 @@ public class GameMaster : MonoBehaviour {
    public static int playerHealth = 3;
    // Player score
    public static int playerScore = 0;
+   public static int highScore = 0;
    public static int waveNumber = 1;
    public static int enemiesLeft = 20;
+   public static bool gameover = false;
 
    // Method to call when enemy is hit
    public static void EnemyHit(Alien alien) {
@@ -22,6 +24,9 @@ public class GameMaster : MonoBehaviour {
       if (enemiesLeft == 0) {
           waveNumber++;
           enemiesLeft = 20;
+      }
+      if (playerScore > highScore) {
+          highScore = playerScore;
       }
    }
 
@@ -34,8 +39,7 @@ public class GameMaster : MonoBehaviour {
          // level 
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
       } else {
-         //No more lives left, load the GameOver scene
-         SceneManager.LoadScene("GameOver");
+         gameover = true;
    	  }
    }
 }
